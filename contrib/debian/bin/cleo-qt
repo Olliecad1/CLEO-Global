@@ -4,13 +4,14 @@ set -e
 
 umask 077
 
-basedir=~/.denarius
+basedir=~/.cleo
 dbfile="$basedir/DB_CONFIG"
 cfgfile="$basedir/denarius.conf"
 
 [ -e "$basedir" ] || mkdir "$basedir"
 
-# Denarius does not clean up DB log files by default
+# CLEO does not clean up DB log files by default
 [ -e "$dbfile" ] || echo 'set_flags DB_LOG_AUTOREMOVE' > "$dbfile"
 
-exec /usr/lib/denarius/denarius-qt "$@"
+exec /usr/lib/cleo/cleo-qt "$@"
+
