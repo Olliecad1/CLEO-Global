@@ -1,6 +1,6 @@
 [Protocol]
-exec=denarius-qt '%u'
-protocol=denarius
+exec=cleo-qt '%u'
+protocol=cleo
 input=none
 output=none
 helper=true

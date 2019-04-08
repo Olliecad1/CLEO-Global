@@ -1,0 +1,2 @@
+debian/bin/cleod usr/bin
+src/cleod usr/lib/cleo

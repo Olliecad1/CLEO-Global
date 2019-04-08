@@ -10,8 +10,7 @@ cfgfile="$basedir/denarius.conf"
 
 [ -e "$basedir" ] || mkdir "$basedir"
 
-# CLEO does not clean up DB log files by default
+# Cleo does not clean up DB log files by default
 [ -e "$dbfile" ] || echo 'set_flags DB_LOG_AUTOREMOVE' > "$dbfile"
 
 exec /usr/lib/cleo/cleo-qt "$@"
-

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=CLEO
+Comment=CLEO P2P Cryptocurrency
+Comment[fr]=CLEO, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=CLEO, eşten eşe kriptografik sanal para birimi
+Exec=/usr/bin/CLEO
+Terminal=false
+Type=Application
+Icon=/usr/share/pixmaps/bitcoin80.xpm
+MimeType=x-scheme-handler/cleo;
+Categories=Office;
