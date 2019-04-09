@@ -793,7 +793,7 @@ bool CTransaction::CheckTransaction() const
 
     if (nVersion == ANON_TXN_VERSION)
     {
-        // -- Prevent Anon TXs in mainnet until after block 1,350,000 (1.35m Million) ~ D e n a r i u s
+        // -- Prevent Anon TXs in mainnet until after block 1,350,000 (1.35m Million) ~ C L E O 
 
         if (!fTestNet && nBestHeight < 1350000)
         {
@@ -1892,7 +1892,7 @@ bool CTransaction::FetchInputs(CTxDB& txdb, const map<uint256, CTxIndex>& mapTes
     return true;
 }
 
-// Ring Signatures - D e n a r i u s
+// Ring Signatures - C L E O 
 static bool CheckAnonInputAB(CTxDB &txdb, const CTxIn &txin, int i, int nRingSize, std::vector<uint8_t> &vchImage, uint256 &preimage, int64_t &nCoinValue)
 {
     const CScript &s = txin.scriptSig;
