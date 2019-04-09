@@ -54,7 +54,6 @@ void SHA256Transform(void* pstate, void* pinput, const void* pinit)
         ((uint32_t*)pstate)[i] = ctx.h[i];
 }
 
-// Some explaining would be appreciated
 class COrphan
 {
 public:
@@ -135,7 +134,7 @@ CBlock* CreateNewBlock(CWallet* pwallet, bool fProofOfStake, int64_t* pFees)
     txNew.vout.resize(1);
 
 
-    int nHeight = pindexPrev->nHeight+1; // height of new block
+    int nHeight = pindexPrev->nHeight+1; // height += 1
 
     if (!fProofOfStake)
     {
@@ -233,7 +232,7 @@ CBlock* CreateNewBlock(CWallet* pwallet, bool fProofOfStake, int64_t* pFees)
                     if (fDebug) printf("CreateNewBlock(): Failed to detect fortunastake to pay, burning coins.");
                     std::string burnAddress;
                     if (fTestNet) std::string burnAddress = "8TestXXXXXXXXXXXXXXXXXXXXXXXXbCvpq";
-                    else std::string burnAddress = "DNRXXXXXXXXXXXXXXXXXXXXXXXXXZeeDTw";
+                    else std::string burnAddress = "CLEOXXXXXXXXXXXXXXXXXXXXXXXXXZeeDTw";
                     CBitcoinAddress burnAddr;
                     burnAddr.SetString(burnAddress);
                     payee = GetScriptForDestination(burnAddr.Get());
