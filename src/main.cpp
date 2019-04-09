@@ -45,12 +45,12 @@ CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 16);
 
 // Block Variables
 
-unsigned int nTargetSpacing     = 30;               // 30 seconds, FAST
+unsigned int nTargetSpacing     = 120;               // 2 min blockt time
 unsigned int nStakeMinAge       = 8 * 60 * 60;      // 8 hour min stake age
 unsigned int nStakeMaxAge       = -1;               // unlimited
 unsigned int nModifierInterval  = 10 * 60;          // time to elapse before new modifier is computed
 int64_t nLastCoinStakeSearchTime = GetAdjustedTime();
-int nCoinbaseMaturity = 20; //30 on Mainnet D e n a r i u s, 20 for testnet
+int nCoinbaseMaturity = 30;
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
 bool FortunaReorgBlock = true;
@@ -3861,7 +3861,7 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("CacheAnonStats() failed.\n");
 
     //
-    // Init with genesis block
+    // Init chain with genesis block
     //
     if (mapBlockIndex.empty())
     {
@@ -3870,7 +3870,7 @@ bool LoadBlockIndex(bool fAllowNew)
 
         const char* pszTimestamp = "benefactis non potest esse quod factus est";
         CTransaction txNew;
-        txNew.nTime = 1497476511;
+        txNew.nTime = 1552762014;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
@@ -3880,7 +3880,7 @@ bool LoadBlockIndex(bool fAllowNew)
         block.vtx.push_back(txNew);
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
-        block.nTime    = 1497476511;
+        block.nTime    = 1552762014;
         block.nVersion = 1;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
 		    block.nNonce   = 41660;
