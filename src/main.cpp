@@ -3868,7 +3868,7 @@ bool LoadBlockIndex(bool fAllowNew)
         if (!fAllowNew)
             return false;
 
-        const char* pszTimestamp = "benefactis non potest esse quod factus est";
+        const char* pszTimestamp = "bonum factum fieri infectum non potest";
         CTransaction txNew;
         txNew.nTime = 1552762014;
         txNew.vin.resize(1);
