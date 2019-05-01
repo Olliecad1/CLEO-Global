@@ -372,7 +372,7 @@ OBJS= \
 endif
 
 
-all: denariusd
+all: cleod
 
 #
 # LevelDB support
@@ -444,11 +444,11 @@ obj/anonymize.o: tor/anonymize.cpp
 	rm -f $(@:%.o=%.d)
 endif
 
-denariusd: $(OBJS:obj/%=obj/%)
+cleod: $(OBJS:obj/%=obj/%)
 	$(LINK) $(xCXXFLAGS) -o $@ $^ $(xLDFLAGS) $(LIBS)
 
 clean:
-	-rm -f denariusd
+	-rm -f cleod
 	-rm -f obj/*.o
 	-rm -f obj/*.P
 	-rm -f obj/*.d
