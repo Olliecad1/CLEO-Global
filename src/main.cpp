@@ -3870,7 +3870,7 @@ bool LoadBlockIndex(bool fAllowNew)
 
         const char* pszTimestamp = "bonum factum fieri infectum non potest";
         CTransaction txNew;
-        txNew.nTime = 1552762014;
+        txNew.nTime = 1558096563;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
@@ -3880,14 +3880,14 @@ bool LoadBlockIndex(bool fAllowNew)
         block.vtx.push_back(txNew);
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
-        block.nTime    = 1552762014;
+        block.nTime    = 1558096563;
         block.nVersion = 1;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-		    block.nNonce   = 41660;
+		    block.nNonce   = 8649;
 
 		    if(fTestNet)
         {
-            block.nNonce   = 13278;
+            block.nNonce   = 0;
         }
         if (false && (block.GetHash() != hashGenesisBlock)) {
 
@@ -3912,7 +3912,7 @@ bool LoadBlockIndex(bool fAllowNew)
 
 
         //// debug print
-        assert(block.hashMerkleRoot == uint256("0xc6d8e8f56c25cac33567e571a3497bfc97f715140fcfe16d971333b38e4ee0f2"));
+        assert(block.hashMerkleRoot == uint256("0xb9328a9fc3d87fbd5270459a53c94a594d8fa18e81f498eaae5c5f5c0ea6b3e0"));
         block.print();
         assert(block.GetHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet));
         assert(block.CheckBlock());
