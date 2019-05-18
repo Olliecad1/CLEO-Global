@@ -326,7 +326,7 @@ OBJS= \
     obj/ringsig.o
 
 
-all: denariusd
+all: cleod
 
 #
 # LevelDB support
@@ -398,11 +398,11 @@ ifeq (${USE_NATIVETOR}, 1)
     rm -f $(@:%.o=%.d)
 endif
 
-denariusd: $(OBJS:obj/%=obj/%)
+cleod: $(OBJS:obj/%=obj/%)
 	$(LINK) $(xCXXFLAGS) -o $@ $^ $(xLDFLAGS) $(LIBS)
 
 clean:
-	-rm -f denariusd
+	-rm -f cleod
 	-rm -f obj/*.o
 	-rm -f obj/*.P
 	-rm -f obj/*.d
