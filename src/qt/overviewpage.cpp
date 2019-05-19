@@ -23,8 +23,8 @@
 const QString BaseURL = "http://denarius.io/dnrusd.php";
 const QString BaseURL2 = "http://denarius.io/dnrbtc.php";
 const QString BaseURL3 = "http://denarius.io/newsfeed.php";
-double denariusx;
-double dnrbtcx;
+double cleox;
+double cleobtcx;
 
 class TxViewDelegate : public QAbstractItemDelegate
 {
@@ -173,35 +173,35 @@ void OverviewPage::parseNetworkResponse(QNetworkReply *finished )
         return;
     }
 
-if (what == BaseURL) // Denarius Price
+if (what == BaseURL) // Cleo Price
 {
 
     // QNetworkReply is a QIODevice. So we read from it just like it was a file
-    QString denarius = finished->readAll();
-    denariusx = (denarius.toDouble());
-    denarius = QString::number(denariusx, 'f', 2);
+    QString cleo = finished->readAll();
+    cleox = (cleo.toDouble());
+    cleo = QString::number(cleox, 'f', 2);
 
-	dollarg = denarius;
+	dollarg = cleo;
 }
-if (what == BaseURL2) // Denarius BTC Price
+if (what == BaseURL2) // Cleo BTC Price
 {
 
     // QNetworkReply is a QIODevice. So we read from it just like it was a file
-    QString dnrbtc = finished->readAll();
-    dnrbtcx = (dnrbtc.toDouble());
-    dnrbtc = QString::number(dnrbtcx, 'f', 8);
+    QString cleobtc = finished->readAll();
+    cleobtcx = (cleobtc.toDouble());
+    cleobtc = QString::number(cleobtcx, 'f', 8);
 
-	bitcoing = dnrbtc;
+	bitcoing = cleobtc;
 }
-if (what == BaseURL3) // Denarius News Feed
+if (what == BaseURL3) // Cleo News Feed
 {
 
     // QNetworkReply is a QIODevice. So we read from it just like it was a file
-    QString dnewsfeed = finished->readAll();
+    QString cleonewsfeed = finished->readAll();
     //dnewsfeedx = (dnewsfeed.toDouble());
     //dnewsfeed = QString::number(dnewsfeedx, 'f', 8);
 
-	dnrnewsfeed = dnewsfeed;
+	cleonewsfeed = cleonewsfeed;
 }
 finished->deleteLater();
 }
@@ -263,7 +263,7 @@ void OverviewPage::setBalance(qint64 balance, qint64 lockedbalance, qint64 stake
     ui->labelTradeLink->setOpenExternalLinks(true);
 	
 	QString news;
-	news = dnrnewsfeed;
+	news = cleonewsfeed;
 	ui->labelNewsFeed->setText(news);
 
     // only show immature (newly mined) balance if it's non-zero, so as not to complicate things

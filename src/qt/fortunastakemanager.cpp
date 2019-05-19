@@ -518,7 +518,7 @@ void FortunastakeManager::on_startButton_clicked()
     bool result = activeFortunastake.Register(c.sAddress, c.sFortunastakePrivKey, c.sTxHash, c.sOutputIndex, errorMessage);
 
     QMessageBox msg;
-    msg.setWindowTitle("Denarius Message");
+    msg.setWindowTitle("Cleo Message");
     if(result)
         msg.setText("Hybrid Fortunastake at " + QString::fromStdString(c.sAddress) + " started.");
     else
@@ -572,7 +572,7 @@ void FortunastakeManager::on_startAllButton_clicked()
     }
 
     QMessageBox msg;
-    msg.setWindowTitle("Denarius Message");
+    msg.setWindowTitle("Cleo Message");
     msg.setText(results);
     msg.exec();
 
@@ -630,7 +630,7 @@ void FortunastakeManager::on_stopButton_clicked()
     std::string errorMessage;
     bool result = activeFortunastake.StopFortunaStake(c.sAddress, c.sFortunastakePrivKey, errorMessage);
     QMessageBox msg;
-    msg.setWindowTitle("Denarius Message");
+    msg.setWindowTitle("Cleo Message");
     if(result)
     {
         msg.setText("Hybrid Fortunastake at " + QString::fromStdString(c.sAddress) + " stopped.");
@@ -661,7 +661,7 @@ void FortunastakeManager::on_stopAllButton_clicked()
     }
 
     QMessageBox msg;
-    msg.setWindowTitle("Denarius Message");
+    msg.setWindowTitle("Cleo Message");
     msg.setText(QString::fromStdString(results));
     msg.exec();
 }

@@ -1,5 +1,5 @@
-#ifndef DENARIUS_QT_RPCCONSOLE_H
-#define DENARIUS_QT_RPCCONSOLE_H
+#ifndef CLEO_QT_RPCCONSOLE_H
+#define CLEO_QT_RPCCONSOLE_H
 
 #include "guiutil.h"
 #include "peertablemodel.h"

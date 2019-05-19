@@ -18,16 +18,16 @@ const QString kBaseUrl2 = "http://denarius.io/dnrmc.php";
 const QString kBaseUrl3 = "http://denarius.io/dnrbtc.php";
 
 QString bitcoinp = "";
-QString denariusp = "";
-QString dnrmcp = "";
-QString dnrbtcp = "";
+QString cleop = "";
+QString cleomcp = "";
+QString cleobtcp = "";
 double bitcoin2;
-double denarius2;
-double dnrmc2;
-double dnrbtc2;
+double cleo2;
+double cleomc2;
+double cleobtc2;
 QString bitcoing;
-QString dnrnewsfeed;
-QString dnrmarket;
+QString cleonewsfeed;
+QString cleomarket;
 QString dollarg;
 int mode=1;
 int o = 0;
@@ -85,25 +85,25 @@ void MarketBrowser::parseNetworkResponse(QNetworkReply *finished )
         return;
     }
 	
-if (what == kBaseUrl) // Denarius Price
+if (what == kBaseUrl) // Cleo Price
 {
 
     // QNetworkReply is a QIODevice. So we read from it just like it was a file
-    QString denarius = finished->readAll();
-    denarius2 = (denarius.toDouble());
-    denarius = QString::number(denarius2, 'f', 2);
+    QString cleo = finished->readAll();
+    cleo2 = (cleo.toDouble());
+    cleo = QString::number(cleo2, 'f', 2);
 	
-    if(denarius > denariusp)
+    if(cleo > cleop)
     {
-        ui->denarius->setText("<font color=\"yellow\">$" + denarius + "</font>");
-    } else if (denarius < denariusp) {
-        ui->denarius->setText("<font color=\"red\">$" + denarius + "</font>");
+        ui->cleo->setText("<font color=\"yellow\">$" + cleo + "</font>");
+    } else if (cleo < cleop) {
+        ui->cleo->setText("<font color=\"red\">$" + cleo + "</font>");
         } else {
-    ui->denarius->setText("$"+denarius+" USD");
+    ui->cleo->setText("$"+cleo+" USD");
     }
 
-    denariusp = denarius;
-	dollarg = denarius;
+    cleop = cleo;
+	dollarg = cleo;
 }
 
 if (what == kBaseUrl1) // Bitcoin Price
@@ -125,46 +125,46 @@ if (what == kBaseUrl1) // Bitcoin Price
     bitcoinp = bitcoin;
 }
 
-if (what == kBaseUrl2) // Denarius Market Cap
+if (what == kBaseUrl2) // Cleo Market Cap
 {
 
     // QNetworkReply is a QIODevice. So we read from it just like it was a file
-    QString dnrmc = finished->readAll();
-    dnrmc2 = (dnrmc.toDouble());
-    dnrmc = QString::number(dnrmc2, 'f', 2);
+    QString cleomc = finished->readAll();
+    cleomc2 = (cleomc.toDouble());
+    cleomc = QString::number(cleomc2, 'f', 2);
 	
-    if(dnrmc > dnrmcp)
+    if(cleomc > cleomcp)
     {
-        ui->dnrmc->setText("<font color=\"yellow\">$" + dnrmc + "</font>");
-    } else if (dnrmc < dnrmcp) {
-        ui->dnrmc->setText("<font color=\"red\">$" + dnrmc + "</font>");
+        ui->cleomc->setText("<font color=\"yellow\">$" + cleomc + "</font>");
+    } else if (cleomc < cleomcp) {
+        ui->cleomc->setText("<font color=\"red\">$" + cleomc + "</font>");
         } else {
-    ui->dnrmc->setText("$"+dnrmc+" USD");
+    ui->cleomc->setText("$"+cleomc+" USD");
     }
 
-    dnrmcp = dnrmc;
-	dnrmarket = dnrmc;
+    cleomcp = cleomc;
+	cleomarket = cleomc;
 }
 
-if (what == kBaseUrl3) // Denarius BTC Price
+if (what == kBaseUrl3) // Cleo BTC Price
 {
 
     // QNetworkReply is a QIODevice. So we read from it just like it was a file
-    QString dnrbtc = finished->readAll();
-    dnrbtc2 = (dnrbtc.toDouble());
-    dnrbtc = QString::number(dnrbtc2, 'f', 8);
+    QString cleobtc = finished->readAll();
+    cleobtc2 = (cleobtc.toDouble());
+    cleobtc = QString::number(cleobtc2, 'f', 8);
 	
-    if(dnrbtc > dnrbtcp)
+    if(cleobtc > cleobtcp)
     {
-        ui->dnrbtc->setText("<font color=\"yellow\">" + dnrbtc + " BTC</font>");
-    } else if (dnrbtc < dnrbtcp) {
-        ui->dnrbtc->setText("<font color=\"red\">" + dnrbtc + " BTC</font>");
+        ui->cleobtc->setText("<font color=\"yellow\">" + cleobtc + " BTC</font>");
+    } else if (cleobtc < cleobtcp) {
+        ui->cleobtc->setText("<font color=\"red\">" + cleobtc + " BTC</font>");
         } else {
-    ui->dnrbtc->setText(dnrbtc+" BTC");
+    ui->cleobtc->setText(cleobtc+" BTC");
     }
 
-    dnrbtcp = dnrbtc;
-	bitcoing = dnrbtc;
+    cleobtcp = cleobtc;
+	bitcoing = cleobtc;
 }
 
 finished->deleteLater();

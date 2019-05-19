@@ -51,11 +51,11 @@ QString BitcoinUnits::description(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("Denarius");
+    case BTC: return QString("Cleo");
     case dBTC: return QString("Bitcoin");
     case USD: return QString("USD");
-    case mBTC: return QString("Milli-Denarius (1 / 1,000)");
-    case uBTC: return QString("Micro-Denarius (1 / 1,000,000)");
+    case mBTC: return QString("Milli-Cleo (1 / 1,000)");
+    case uBTC: return QString("Micro-Cleo (1 / 1,000,000)");
     default: return QString("???");
     }
 }

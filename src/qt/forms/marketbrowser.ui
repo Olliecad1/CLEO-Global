@@ -47,7 +47,7 @@
       <string notr="true">color: #FFF;font-size:26px;font-weight:600;</string>
      </property>
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20px;font-weight:600; color:#FFFFFF;&quot;&gt;Denarius Market Information&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20px;font-weight:600; color:#FFFFFF;&quot;&gt;Cleo Market Information&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -63,7 +63,7 @@
    <item row="17" column="0" colspan="2">
     <layout class="QHBoxLayout" name="horizontalLayout_5">
      <item>
-      <widget class="QLabel" name="denarius">
+      <widget class="QLabel" name="cleo">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -129,7 +129,7 @@
         <enum>QLayout::SetDefaultConstraint</enum>
        </property>
        <item>
-        <widget class="QLabel" name="dnrmc">
+        <widget class="QLabel" name="cleomc">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -156,7 +156,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="dnrbtc">
+        <widget class="QLabel" name="cleobtc">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
            <horstretch>0</horstretch>

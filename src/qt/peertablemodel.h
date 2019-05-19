@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef DENARIUS_QT_PEERTABLEMODEL_H
-#define DENARIUS_QT_PEERTABLEMODEL_H
+#ifndef CLEO_QT_PEERTABLEMODEL_H
+#define CLEO_QT_PEERTABLEMODEL_H
 
 #include "main.h"
 #include "net.h"

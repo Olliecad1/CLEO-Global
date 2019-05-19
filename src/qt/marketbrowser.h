@@ -13,8 +13,8 @@
 
 extern QString bitcoing;
 extern QString dollarg;
-extern QString dnrmarket;
-extern QString dnrnewsfeed;
+extern QString cleomarket;
+extern QString cleonewsfeed;
 
 namespace Ui {
 class MarketBrowser;
