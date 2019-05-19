@@ -1,9 +1,10 @@
 // Copyright (c) 2012-2013 The Peercoin developers
 // Copyright (c) 2017-2018 The Denarius developers
+// Copyright (c) 2019 The Cleo Developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef DENARIUS_KERNEL_H
-#define DENARIUS_KERNEL_H
+#ifndef CLEO_KERNEL_H
+#define CLEO_KERNEL_H
 
 #include "main.h"
 #include "core.h"
@@ -38,4 +39,4 @@ bool CheckStakeModifierCheckpoints(int nHeight, unsigned int nStakeModifierCheck
 // Get time weight using supplied timestamps
 int64_t GetWeight(int64_t nIntervalBeginning, int64_t nIntervalEnd);
 
-#endif // DENARIUS_KERNEL_H
+#endif // CLEO_KERNEL_H

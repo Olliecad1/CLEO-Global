@@ -1,4 +1,5 @@
 // Copyright (c) 2017 The Denarius developers
+// Copyright (c) 2019 The Cleo Developers
 // Copyright (c) 2009-2012 The Darkcoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -940,7 +941,7 @@ bool CFortunaQueue::CheckSignature()
 void ThreadCheckForTunaPool(void* parg)
 {
     // Make this thread recognisable as the wallet flushing thread
-    RenameThread("denarius-mn");
+    RenameThread("cleo-mn");
 
     unsigned int c = 0;
     std::string errorMessage;

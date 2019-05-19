@@ -1,4 +1,5 @@
 // Copyright (c) 2014 The Denarius developers
+// Copyright (c) 2019 The Cleo Developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -589,7 +590,7 @@ bool SecMsgDB::EraseSmesg(unsigned char* chKey)
 void ThreadSecureMsg(void* parg)
 {
     // -- bucket management thread
-    RenameThread("denarius-smsg"); // Make this thread recognisable
+    RenameThread("cleo-smsg"); // Make this thread recognisable
     
     uint32_t delay = 0;
     
@@ -700,7 +701,7 @@ void ThreadSecureMsg(void* parg)
 void ThreadSecureMsgPow(void* parg)
 {
     // -- proof of work thread
-    RenameThread("denarius-smsg-pow"); // Make this thread recognisable
+    RenameThread("cleo-smsg-pow"); // Make this thread recognisable
     
     int rv;
     std::vector<unsigned char> vchKey;

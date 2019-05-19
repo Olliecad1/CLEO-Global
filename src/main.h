@@ -1,6 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
 // Copyright (c) 2017-2018 The Denarius developers
+// Copyright (c) 2019 The Cleo Developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #ifndef BITCOIN_MAIN_H
@@ -56,7 +57,7 @@ class CInv;
 class CRequestTracker;
 class CNode;
 
-// General Denarius Block Values
+// General Cleo Block Values
 
 static const int LAST_POW_BLOCK = 3000000; // Block 3m Approx. 3 years of Proof of Work before Proof of Stake consensus kicks in
 static const int FAIR_LAUNCH_BLOCK = 210; // Last Block until full block reward starts

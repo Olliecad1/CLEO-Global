@@ -1,6 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
 // Copyright (c) 2017-2019 Denarius developers
+// Copyright (c) 2019 The Cleo Developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -206,7 +207,7 @@ bool CWallet::Lock()
         {
             if (it->scan_secret.size() < 32)
                 continue; // stealth address is not owned
-            // -- CStealthAddress are only sorted on spend_pubkey
+             //-- CStealthAddress are only sorted on spend_pubkey
             CStealthAddress &sxAddr = const_cast<CStealthAddress&>(*it);
             if (fDebug)
                 printf("Recrypting stealth key %s\n", sxAddr.Encoded().c_str());
@@ -815,7 +816,7 @@ bool CWallet::AddToWalletIfInvolvingMe(const CTransaction& tx, const CBlock* pbl
         };
 
         mapValue_t mapNarr;
-        if (stealthAddresses.size() > 0 && !fDisableStealth) FindStealthTransactions(tx, mapNarr);
+        //if (stealthAddresses.size() > 0 && !fDisableStealth) FindStealthTransactions(tx, mapNarr);
 
         bool fIsMine = false;
         if (tx.nVersion == ANON_TXN_VERSION)
@@ -916,7 +917,7 @@ int64_t CWallet::GetAnonDebit(const CTxIn& txin) const
     if (!txin.IsAnonInput())
         return 0;
 
-    // -- amount of owned denarius decreased
+    // -- amount of owned cleo decreased
     // TODO: store links in memory
 
     {
@@ -1903,7 +1904,7 @@ static void ApproximateBestSubset(vector<pair<int64_t, pair<const CWalletTx*,uns
     }
 }
 
-// denarius: total coins available for staking - WIP needs updating
+// cleo: total coins available for staking - WIP needs updating
 int64_t CWallet::GetStakeAmount() const
 {
     int64_t nTotal = 0;
@@ -3932,7 +3933,7 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
                     // fortunastakes are in-eligible for payment, burn the coins in-stead
                     std::string burnAddress;
                     if (fTestNet) burnAddress = "8TestXXXXXXXXXXXXXXXXXXXXXXXXbCvpq";
-                    else burnAddress = "DNRXXXXXXXXXXXXXXXXXXXXXXXXXZeeDTw";
+                    else burnAddress = "CLEOXXXXXXXXXXXXXXXXXXXXXXXXXZeeDTw";
                     CBitcoinAddress burnDestination;
                     burnDestination.SetString(burnAddress);
                     payee = GetScriptForDestination(burnDestination.Get());
@@ -4015,7 +4016,7 @@ bool CWallet::CommitTransaction(CWalletTx& wtxNew, CReserveKey& reservekey, cons
     };
 
     mapValue_t mapNarr;
-    if (stealthAddresses.size() > 0 && !fDisableStealth) FindStealthTransactions(wtxNew, mapNarr);
+    //if (stealthAddresses.size() > 0 && !fDisableStealth) FindStealthTransactions(wtxNew, mapNarr);
 
     bool fIsMine = false;
     if (wtxNew.nVersion == ANON_TXN_VERSION)
@@ -6920,7 +6921,7 @@ bool CWallet::SendDToAnon(CStealthAddress& sxAddress, int64_t nValue, std::strin
 
     if (vNodes.empty())
     {
-        sError = _("Error: Denarius is not connected!");
+        sError = _("Error: Cleo is not connected!");
         return false;
     };
 
@@ -7035,7 +7036,7 @@ bool CWallet::SendAnonToAnon(CStealthAddress& sxAddress, int64_t nValue, int nRi
 
     if (vNodes.empty())
     {
-        sError = _("Error: Denarius is not connected!");
+        sError = _("Error: Cleo is not connected!");
         return false;
     };
 
@@ -7131,7 +7132,7 @@ bool CWallet::SendAnonToD(CStealthAddress& sxAddress, int64_t nValue, int nRingS
 
     if (vNodes.empty())
     {
-        sError = _("Error: Denarius is not connected!");
+        sError = _("Error: Cleo is not connected!");
         return false;
     };
 

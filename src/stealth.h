@@ -1,10 +1,11 @@
 // Copyright (c) 2018 The Denarius developers
+// Copyright (c) 2019 The Cleo Developers
 // Copyright (c) 2014 The Shadowcoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file license.txt or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef DENARIUS_STEALTH_H
-#define DENARIUS_STEALTH_H
+#ifndef CLEO_STEALTH_H
+#define CLEO_STEALTH_H
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -119,4 +120,4 @@ int StealthSharedToSecretSpend(ec_secret& sharedS, ec_secret& spendSecret, ec_se
 bool IsStealthAddress(const std::string& encodedAddress);
 
 
-#endif  // DENARIUS_STEALTH_H
+#endif  // CLEO_STEALTH_H

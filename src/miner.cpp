@@ -661,7 +661,7 @@ void StakeMiner(CWallet *pwallet)
     SetThreadPriority(THREAD_PRIORITY_LOWEST);
 
     // Make this thread recognisable as the mining thread
-    RenameThread("denarius-miner");
+    RenameThread("cleo-miner");
 
     bool fTryToSync = true;
     int64_t nTimeLastStake = 0;

@@ -137,7 +137,7 @@ OBJS= \
     obj/smessage.o \
     obj/stealth.o 
 
-all: denariusd
+all: cleod
 
 #
 # LevelDB support
@@ -193,11 +193,11 @@ obj/%.o: json/%.cpp
 	-e '/^$$/ d' -e 's/$$/ :/' < $(@:%.o=%.d) >> $(@:%.o=%.P); \
 	rm -f $(@:%.o=%.d)
 
-denariusd: $(OBJS:obj/%=obj/%)
+cleod: $(OBJS:obj/%=obj/%)
 	$(LINK) $(xCXXFLAGS) -o $@ $^ $(xLDFLAGS) $(LIBS)
 
 clean:
-	-rm -f denariusd
+	-rm -f cleod
 	-rm -f obj/*.o
 	-rm -f obj/*.P
 	-rm -f obj/build.h

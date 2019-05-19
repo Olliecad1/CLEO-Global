@@ -1,4 +1,5 @@
 // Copyright (c) 2017 The Denarius developers
+// Copyright (c) 2019 The Cleo Developers
 // Copyright (c) 2009-2012 The Darkcoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -419,7 +420,7 @@ public:
     // get the denominations for a list of outputs (returns a bitshifted integer)
     int GetDenominations(const std::vector<CTxOut>& vout);
     void GetDenominationsToString(int nDenom, std::string& strDenom);
-    // get the denominations for a specific amount of denarius.
+    // get the denominations for a specific amount of cleo.
     int GetDenominationsByAmount(int64_t nAmount, int nDenomTarget=0);
 
     int GetDenominationsByAmounts(std::vector<int64_t>& vecAmount);
