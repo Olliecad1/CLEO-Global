@@ -1542,13 +1542,11 @@ int64_t GetProofOfWorkReward(int nHeight, int64_t nFees)
 		nSubsidy = 132000000 * COIN;  // 22% Premine premine of 600M MAX SUPPLY 
 	else if (pindexBest->nHeight <= FAIR_LAUNCH_BLOCK) // Block 210, Instamine prevention
         nSubsidy = 1 * COIN/2;
-	else if (pindexBest->nHeight <= 1000000) // Block 1m ~ 3m (33% will go to hybrid fortunastakes)
-		nSubsidy = 3 * COIN;
-	else if (pindexBest->nHeight <= 2000000) // Block 2m ~ 4m
-		nSubsidy = 4 * COIN;
-	else if (pindexBest->nHeight <= 3000000) // Block 3m ~ 3m
-		nSubsidy = 3 * COIN;
-    else if (pindexBest->nHeight > LAST_POW_BLOCK) // Block 3m
+	else if (pindexBest->nHeight <= 250000) //(33% will go to hybrid fortunastakes)
+		nSubsidy = 600 * COIN;
+	else if (pindexBest->nHeight <= 500000)
+		nSubsidy = 300 * COIN;
+    else if (pindexBest->nHeight > LAST_POW_BLOCK) // Block 500k
 		nSubsidy = 0; // PoW Ends
 
     if (fDebug && GetBoolArg("-printcreation"))
