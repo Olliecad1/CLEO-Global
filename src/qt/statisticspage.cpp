@@ -54,29 +54,26 @@ void StatisticsPage::updateStatistics()
     QString stakemin = QString::number(nMinWeight);
     QString stakemax = QString::number(nNetworkWeight);
     QString phase = "";
-    if (pindexBest->nHeight < 3000000)
+    if (pindexBest->nHeight <= 500000)
     {
         phase = "Tribus Proof of Work with Proof of Stake";
     }
-    else if (pindexBest->nHeight > 3000000)
+    else if (pindexBest->nHeight > 500000)
     {
         phase = "Proof of Stake";
     }
 
     QString subsidy = "";
-	if (pindexBest->nHeight < 1000000)
+	if (pindexBest->nHeight <= 250000)
     {
-        subsidy = "3 D per block";
+        subsidy = "600 CLEO per block";
     }
-	else if (pindexBest->nHeight < 2000000)
+	else if (pindexBest->nHeight <= 500000)
     {
-        subsidy = "4 D per block";
+        subsidy = "300 CLEO per block";
     }
-	else if (pindexBest->nHeight < 3000000)
-    {
-        subsidy = "3 D per block";
-    }
-    else if (pindexBest->nHeight > 3000000)
+
+    else if (pindexBest->nHeight > 500000)
     {
         subsidy = "No PoW Reward";
     }
@@ -87,7 +84,7 @@ void StatisticsPage::updateStatistics()
 
     QString QPeers = QString::number(peers);
     QString qVolume = QString::number(volume);
-	QString mn = "5,000 D";
+	QString mn = "250,000 CLEO";
 	QString mn2 = "33% of PoW/PoS block reward";
 	
 	ui->mncost->setText("<b><font color=\"orange\">" + mn + "</font></b>");	
