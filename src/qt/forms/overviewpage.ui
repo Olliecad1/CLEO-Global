@@ -564,7 +564,7 @@
              <string notr="true"/>
             </property>
             <property name="text">
-             <string>Cleo Wallet</string>
+             <string>CLEO Wallet</string>
             </property>
            </widget>
           </item>
@@ -781,7 +781,7 @@
            </font>
           </property>
           <property name="text">
-           <string>Cleo News:</string>
+           <string>CLEO News:</string>
           </property>
          </widget>
         </item>
