@@ -38,11 +38,11 @@ QString BitcoinUnits::name(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("D");
+    case BTC: return QString("CLEO");
     case dBTC: return QString("BTC");
     case USD: return QString("USD");
-    case mBTC: return QString("mD");
-    case uBTC: return QString::fromUtf8("μD");
+    case mBTC: return QString("mCLEO");
+    case uBTC: return QString::fromUtf8("μCLEO");
     default: return QString("???");
     }
 }
@@ -51,11 +51,11 @@ QString BitcoinUnits::description(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("Cleo");
+    case BTC: return QString("CLEO");
     case dBTC: return QString("Bitcoin");
     case USD: return QString("USD");
-    case mBTC: return QString("Milli-Cleo (1 / 1,000)");
-    case uBTC: return QString("Micro-Cleo (1 / 1,000,000)");
+    case mBTC: return QString("Milli-CLEO (1 / 1,000)");
+    case uBTC: return QString("Micro-CLEO (1 / 1,000,000)");
     default: return QString("???");
     }
 }
